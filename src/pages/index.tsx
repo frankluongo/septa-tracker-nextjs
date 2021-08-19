@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ data, error }) => {
+  console.log({ data, error });
+
   return (
     <div className={styles.container}>
       <Head>
@@ -67,6 +69,17 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const res = await fetch('http://www3.septa.org/hackathon/RRSchedules');
+    const data = await res.json();
+    return { props: { data } }
+  } catch(error) {
+    return { props: { error } }
+  }
+
 }
 
 export default Home
