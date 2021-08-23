@@ -1,0 +1,17 @@
+.Header {
+  --header-padding: 1rem;
+
+  padding-bottom: var(--header-padding);
+  padding-top: var(--header-padding);
+
+  color: var(--color-white, white);
+
+  background-color: var(--color-primary);
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+@media (min-width: 960px) {
+  .Header {
+    --header-padding: 2rem;
+  }
+}

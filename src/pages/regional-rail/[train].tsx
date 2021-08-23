@@ -1,22 +1,11 @@
 import type { GetServerSideProps } from 'next';
-import { DataError } from '#components/DataError';
+import { Error } from '#components/Error';
 import { TrainSchedule } from '#components/TrainSchedule';
-
-interface TrainPageInterface {
-  data: {
-    error?: string;
-  };
-  error?: {
-    message?: string;
-  };
-}
+import { TrainPageInterface } from '#common/interfaces';
 
 const Train = ({ data, error }: TrainPageInterface) => {
-  if (data?.error) return <DataError error={data?.error} />;
-
+  if (error) return <Error error={error} />;
   return <TrainSchedule schedule={data} />;
-
-  return <div>lets get that train</div>;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -26,9 +15,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       `http://www3.septa.org/hackathon/RRSchedules/${train}`
     );
     const data = await res.json();
+    if (data?.error) return { props: { error: data?.error } };
     return { props: { data } };
   } catch (error) {
-    return { props: { error } };
+    return { props: { error: error?.message || '' } };
   }
 };
 

@@ -1,0 +1,65 @@
+.TrainList {
+  --train-list-columns: 1fr;
+  --train-list-gap: 1rem;
+  --train-list-padding: 1rem;
+
+  display: grid;
+  gap: var(--train-list-gap);
+  grid-template-columns: var(--train-list-columns);
+  padding-bottom: var(--train-list-padding);
+  padding-top: var(--train-list-padding);
+}
+
+/* ? Single Train */
+/* ========================================================== */
+
+.Train {
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.5rem;
+}
+
+.TrainDetails {
+  padding: 0.5rem;
+}
+
+.TrainFooter {
+  padding: 0.5rem;
+
+  border-top: 1px solid var(--color-gray-light);
+}
+
+.TrainHeader {
+  align-items: center;
+  display: flex;
+  padding: 0.5rem;
+
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.TrainHeaderName {
+  margin: 0;
+  padding: 0;
+}
+
+.TrainHeaderNo {
+  margin-left: auto;
+
+  text-align: right;
+}
+
+.TrainHeaderNoLabel {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .TrainList {
+    --train-list-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .TrainList {
+    --train-list-columns: repeat(3, 1fr);
+    --train-list-padding: 3rem;
+  }
+}

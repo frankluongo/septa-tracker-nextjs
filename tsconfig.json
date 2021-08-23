@@ -12,6 +12,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
+      "#common/*": ["common/*"],
       "#components/*": ["components/*"],
       "#styles/*": ["styles/*"]
     },

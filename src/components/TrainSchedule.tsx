@@ -1,13 +1,12 @@
+import { SingleTrainSchedule } from '#common/interfaces';
 import css from '#styles/components/TrainSchedule.module.css';
 
-interface ItemInter {
-  act_tm: string;
-  est_tm: string;
-  sched_tm: string;
-  station: string;
-}
-
-export const TrainSchedule = ({ schedule }: { schedule: [ItemInter] }) => {
+export const TrainSchedule = ({
+  schedule,
+}: {
+  schedule: [SingleTrainSchedule] | null;
+}) => {
+  if (!schedule) return null;
   return (
     <section className={css.TrainScheduleWrapper}>
       <table className={css.TrainSchedule}>

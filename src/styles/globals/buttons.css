@@ -1,0 +1,27 @@
+.button {
+  display: inline-block;
+
+  text-decoration: none;
+
+  appearance: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.button.default {
+  padding: 0.75rem 1rem;
+
+  font-size: 1rem;
+}
+
+.button.large {
+  padding: 1rem 1.5rem;
+
+  font-size: 1.25rem;
+}
+
+.button.filled-in {
+  color: var(--color-white);
+
+  background-color: var(--color-secondary);
+}

@@ -1,20 +1,15 @@
-import React from 'react'
-import { Container } from './Container'
+import React from 'react';
+import { Container } from './Container';
+import { Header } from './Header';
 
 export const Layout = ({ children }: any) => {
   return (
     <>
-    <header>
-      Header coming soon
-    </header>
-    <main>
-      <Container>
-        {children}
-      </Container>
-    </main>
-    <footer>
-      footer coming soon
-    </footer>
+      <Header />
+      <main>
+        <Container>{children}</Container>
+      </main>
+      <footer>footer coming soon</footer>
     </>
-  )
-}
+  );
+};

@@ -1,0 +1,11 @@
+:root {
+  /* ? Colors */
+  --septa-blue: #123876;
+  --septa-orange: #eb4525;
+  /* ? Color Palette */
+  --color-primary: var(--septa-blue);
+  --color-secondary: var(--septa-orange);
+  --color-gray-light: #eee;
+  --color-white: #fff;
+  /* ? Typefaces */
+}

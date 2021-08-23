@@ -1,0 +1,5 @@
+.FetchError {
+  --fetch-error-padding: 1rem;
+
+  padding: var(--fetch-error-padding);
+}
